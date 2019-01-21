@@ -55,14 +55,12 @@ class App extends Component {
   };
 
   fetchMore = ([entry]) => {
-    console.log('ENTRIES =>', entry);
     if (entry.isIntersecting && entry.intersectionRatio === 1) {
       this.getPhotos();
     }
   };
 
   getPhotos = async () => {
-    console.log('========== FETCHING =========\n');
     const END = 'end';
     const page = this.state.photos.length !== 100 ? this.state.page : END;
     if (page !== END) {
