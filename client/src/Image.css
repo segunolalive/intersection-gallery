@@ -1,0 +1,40 @@
+.img-wrapper {
+  position: relative;
+  transform: scale(0.4);
+  opacity: 0.1;
+  margin: 0;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #262c35;
+  color: #fdfdfd;
+  padding: 10px;
+  z-index: 1;
+  font-size: 12px;
+}
+
+@keyframes boom {
+  0% {
+    transform: scale(0.6) translateY(3.2rem);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.grow {
+  animation-name: boom;
+  animation-duration: 300ms;
+  animation-fill-mode: both;
+}

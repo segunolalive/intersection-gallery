@@ -1,0 +1,29 @@
+.App,
+.App-header,
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-header {
+  height: 10vh;
+  background-color: #282c34;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+main {
+  max-width: 900px;
+  margin-top: 10vh;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
