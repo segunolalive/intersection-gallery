@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start-server": "json-server --port 5000 --watch server/db.js"
+    "start": "json-server --port 5000 --watch db.js"
   },
   "keywords": [],
   "author": "",
