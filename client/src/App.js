@@ -31,7 +31,6 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    // await this.getPhotos();
     this.scrollObserver.observe(this.gridRef.current);
   }
 

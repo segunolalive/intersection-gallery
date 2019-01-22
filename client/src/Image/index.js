@@ -24,7 +24,7 @@ export default class Image extends React.Component {
     } = this.props.photo;
 
     return (
-      <Link to={`/photos/${id}`}>
+      <Link to={`/photos/${id}`} className="img-link">
         <figure className="img-wrapper" ref={this.imageRef}>
           <img src={src} className="photo" />
           <figcaption className="caption">
