@@ -13,7 +13,8 @@
   right: 0;
   left: 0;
   overflow: hidden;
-  transition: transform 0.5s cubic-bezier(0.65, 0.24, 0.35, 1.1);
+  transition: transform 0.5s cubic-bezier(0.65, 0.24, 0.35, 1.1),
+    opacity 0.5s cubic-bezier(0.65, 0.24, 0.35, 1.1);
 }
 
 .modal-content {
@@ -52,8 +53,10 @@
 
 .hide {
   transform: scale(0);
+  opacity: 0;
 }
 
 .show {
-  transform:scale(1);
+  transform: scale(1);
+  opacity: 1;
 }
