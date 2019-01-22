@@ -3,6 +3,8 @@ import { Route } from 'react-router-dom';
 import Image from './Image';
 import Modal from './Modal';
 
+const END = 'end';
+
 const toggleGrow = entry => {
   entry.forEach(change => {
     if (change.isIntersecting) {
@@ -13,7 +15,7 @@ const toggleGrow = entry => {
   });
 };
 
-class App extends Component {
+class Gallery extends Component {
   static getDerivedStateFromProps(props, state) {
     const { id } = props.match.params;
     const selected = id
@@ -60,7 +62,6 @@ class App extends Component {
   };
 
   getPhotos = async () => {
-    const END = 'end';
     const page = this.state.photos.length !== 100 ? this.state.page : END;
     if (page !== END) {
       try {
@@ -80,6 +81,10 @@ class App extends Component {
     }
   };
 
+  closeModal = () => {
+    this.props.history.push('/photos');
+  };
+
   render() {
     return (
       <>
@@ -89,16 +94,19 @@ class App extends Component {
           ))}
           {this.state.loading && <h3> L O A D I N G . . . </h3>}
           <Route
+            path="/photos/:id"
             render={routerProps => (
-              <Modal {...routerProps} selected={this.state.selected} />
+              <Modal {...routerProps} close={this.closeModal} />
             )}
           />
         </div>
-        {/* {this.state.page === 'end' && <div> That's all folks. </div>} */}
+        {this.state.photos.length === 100 && (
+          <div className="bottom"> That's all folks. </div>
+        )}
         <span className="bottom" ref={this.gridRef} />
       </>
     );
   }
 }
 
-export default App;
+export default Gallery;

@@ -29,3 +29,8 @@ main {
   grid-auto-rows: minmax(180px, auto);
   grid-auto-flow: dense;
 }
+
+.bottom {
+  font-size: 2rem;
+  color: var(--primary-color);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import App from './App';
-import './App.css';
+import Gallery from './Gallery';
+import './Gallery.css';
 import Header from './Header';
 
 const Root = () => (
@@ -10,8 +10,8 @@ const Root = () => (
       <Header />
       <main>
         <Switch>
-          <Route path="/photos/:id" component={App} />
-          <Route path="/" component={App} />
+          <Route path="/photos" component={Gallery} />
+          <Route path="/" component={Gallery} />
         </Switch>
       </main>
     </div>
