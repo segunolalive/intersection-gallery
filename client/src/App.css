@@ -6,12 +6,12 @@ main {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--primary-text, white);
 }
 
 .App-header {
   height: 10vh;
-  background-color: #282c34;
+  background-color: var(--primary-color, #282c34);
   width: 100%;
   position: fixed;
   top: 0;
