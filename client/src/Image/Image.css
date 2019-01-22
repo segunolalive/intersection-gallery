@@ -2,6 +2,10 @@
   height: 80%;
 }
 
+.img-link:hover .img-description {
+  transform: scaleY(1);
+}
+
 .img-wrapper {
   display: flex;
   flex-direction: column;
@@ -20,15 +24,24 @@
   object-fit: cover;
   transition: height 0.5s cubic-bezier(0.65, 0.24, 0.35, 1.1);
 }
+.hide-image {
+  visibility: 0;
+  transform: scale(0);
+}
 
 .caption {
   flex-grow: 1;
   bottom: 0;
   height: 10%;
-  background-color: #262c35;
+  background-color: var(--primary-color, #282c34);
   color: #fdfdfd;
   padding: 10px;
   font-size: 12px;
+}
+
+.img-description {
+  transform: scaleY(0);
+  transition: transform 0.5s cubic-bezier(0.65, 0.24, 0.35, 1.1);
 }
 
 @keyframes boom {

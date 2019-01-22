@@ -10,6 +10,15 @@ export default class Image extends React.Component {
 
   componentDidMount() {
     this.props.observer.observe(this.imageRef.current);
+
+    const loadImage = window.setInterval(() => {
+      if (this.imageRef.current) {
+        this.imageRef.current
+          .querySelector('.photo')
+          .classList.remove('hide-image');
+        clearInterval(loadImage);
+      }
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -26,9 +35,14 @@ export default class Image extends React.Component {
     return (
       <Link to={`/photos/${id}`} className="img-link">
         <figure className="img-wrapper" ref={this.imageRef}>
-          <img src={src} className="photo" />
+          <img src={src} className="photo hide-image" />
           <figcaption className="caption">
             owner: <strong>{name}</strong>
+            <p className="img-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor.
+            </p>
           </figcaption>
         </figure>
       </Link>
