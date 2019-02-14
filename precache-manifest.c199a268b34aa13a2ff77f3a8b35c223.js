@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/intersection-gallery/static/css/main.4d81b802.chunk.css"
   },
   {
-    "revision": "635f5e7f72344da7543bad860557b772",
+    "revision": "d46a0f934db3b54c74402df1f7e287d5",
     "url": "/intersection-gallery/index.html"
   }
 ];
