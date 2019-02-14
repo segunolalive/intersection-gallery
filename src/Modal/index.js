@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom';
 import './Modal.css';
+import { API } from '../utils/constants';
 
 export default class Modal extends React.Component {
   constructor(props) {
@@ -17,6 +17,7 @@ export default class Modal extends React.Component {
 
   componentDidMount() {
     this.fetchImage();
+    document.getElementById('close-modal').focus();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -28,7 +29,7 @@ export default class Modal extends React.Component {
   fetchImage = async () => {
     const { id } = this.state;
     if (id) {
-      const response = await fetch(`http://localhost:5000/photos/${id}`);
+      const response = await fetch(`${API}/photos/${id}`);
       const photo = await response.json();
       this.setState({ photo });
     }
@@ -49,6 +50,7 @@ export default class Modal extends React.Component {
       >
         <div className="modal-content">
           <a
+            id="close-modal"
             href="/photos"
             onClick={this.hide}
             aria-label="close"

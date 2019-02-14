@@ -1,5 +1,6 @@
 {
-  "name": "cohort-44",
+  "name": "intersection-gallery",
+  "homepage": "https://segunolalive.github.io/unsplash-intersect",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

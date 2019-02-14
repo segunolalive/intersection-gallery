@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Image from './Image';
 import Modal from './Modal';
+import { API } from './utils/constants';
 
 const END = 'end';
 
@@ -45,7 +46,7 @@ class Gallery extends Component {
 
   createImageObserver = () => {
     let options = {
-      threshold: [0.2]
+      threshold: [0]
     };
     return new IntersectionObserver(toggleGrow, options);
   };
@@ -66,9 +67,7 @@ class Gallery extends Component {
     if (page !== END) {
       try {
         this.setState({ loading: true });
-        const response = await fetch(
-          `http://localhost:5000/photos?_page=${page}&_limit=20`
-        );
+        const response = await fetch(`${API}/photos?_page=${page}&_limit=20`);
         const photos = await response.json();
         this.setState({
           photos: [...this.state.photos, ...photos],
