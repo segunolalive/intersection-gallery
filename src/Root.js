@@ -5,7 +5,7 @@ import './Gallery.css';
 import Header from './Header';
 
 const Root = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <div className="App">
       <Header />
       <main>
