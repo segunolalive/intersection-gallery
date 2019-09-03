@@ -10,7 +10,8 @@ const toggleGrow = entry => {
   entry.forEach(change => {
     if (change.isIntersecting) {
       change.target.classList.add('grow');
-    } else {
+    }
+    else {
       change.target.classList.remove('grow');
     }
   });
